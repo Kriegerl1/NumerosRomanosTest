@@ -51,7 +51,7 @@ public class ConversorDeNumerosTest
         //Arrange
 
         //Act
-        //var resultadoNumero = _conversor.Calcular(Numero);
+        //var resultadoNumero = _conversor.CalcularInverso(Numero);
 
         var resultadoRomanos = _conversor.Calcular(Letra);
 

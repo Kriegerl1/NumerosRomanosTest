@@ -61,51 +61,32 @@ public class Conversor
         return Resultado = string.Empty;
     }
 
+    public string CalcularInverso(int Numero)
+    {
+        string resultadoFinal = string.Empty;
+        return resultadoFinal;
+
+    }
     public int Calcular(string numeroRomano)
     {
-        int resultadoFinal = 0;
-        var numerosRomanosCharArray = numeroRomano.ToCharArray();
-        int numeroAtual;
-        int pivoCentral = 0;
-        int i = 0;
-        int aux = 0;
-        int proximoNumero=0;
+        char[] numerosRomanosCharArray = numeroRomano.ToCharArray();
+        int resultadoFinal = 0, numeroAtual, proximoNumero = 0;
 
 
-        for (i = 0; i < numerosRomanosCharArray.Length; i++)
+        for (int i = 0; i < numerosRomanosCharArray.Length; i++)
         {
             numeroAtual = ConverterNumeros(Convert.ToString(numerosRomanosCharArray[i]));
 
-            aux = numeroAtual;
+            int aux = numeroAtual;
 
             if (i != (numerosRomanosCharArray.Length - 1))
-            {
-                 proximoNumero = ConverterNumeros(Convert.ToString(numerosRomanosCharArray[i + 1]));
-            }
+                proximoNumero = ConverterNumeros(Convert.ToString(numerosRomanosCharArray[i + 1]));
+
             if (proximoNumero > numeroAtual)
                 resultadoFinal -= aux;
             else
-            {
-                aux = numeroAtual;
                 resultadoFinal += aux;
-                pivoCentral = i;
-            }
-
-
         }
-
-        //if (numerosRomanosCharArray[i] < numerosRomanosCharArray[pivoCentral])
-        //{
-        //    resultadoFinal -= valor;
-        //}
-        //else
-        //{
-        //    resultadoFinal += valor;
-        //}
-
-
-
-
 
         return resultadoFinal;
     }
