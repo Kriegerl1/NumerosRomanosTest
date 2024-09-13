@@ -34,10 +34,18 @@ public class ConversorDeNumerosTest
     }
 
     [TestMethod]
-    //[DataRow("XV", 15)]
-    //[DataRow("IV", 4)]
-    //[DataRow("VI", 6)]
-    [DataRow("XXIV", 24)]
+    [DataRow("III", 3)]
+    [DataRow("XXX", 30)]
+    [DataRow("CCC", 300)]
+    [DataRow("MMM", 3000)]
+    [DataRow("VIII", 8)]
+    [DataRow("LXII", 62)]
+    [DataRow("CLVIII", 158)]
+    [DataRow("MCXX", 1120)]
+    [DataRow("MCXX", 1120)]
+    [DataRow("IV", 4)]
+    [DataRow("IX", 9)]
+    [DataRow("XC", 90)]
     public void Deve_Calcular_Unidade_Convertida(string Letra, int Numero)
     {
         //Arrange
