@@ -51,14 +51,22 @@ public class ConversorDeNumerosTest
         //Arrange
 
         //Act
-        //var resultadoNumero = _conversor.CalcularInverso(Numero);
-
         var resultadoRomanos = _conversor.Calcular(Letra);
 
 
         //Assert
         Assert.AreEqual(Numero, resultadoRomanos);
+    }
 
-        //Assert.AreEqual(Letra, resultadoNumero);
+    [TestMethod]
+    [DataRow(99, "XCIX")]
+    public void Deve_Calcular_Unidade_Romana(int Numero, string Letra)
+    {
+        //Arrange
+        //Act
+        var resultadoRomanos = _conversor.CalcularInverso(Numero);
+
+        //Assert
+        Assert.AreEqual(Letra, resultadoRomanos);
     }
 }

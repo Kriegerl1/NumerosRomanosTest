@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Drawing;
+using System.Linq;
+using System.Text;
 
 namespace NumerosRomanos.Dominio;
 
@@ -63,7 +65,33 @@ public class Conversor
 
     public string CalcularInverso(int Numero)
     {
+        //99 = XCIX
         string resultadoFinal = string.Empty;
+
+        var numerais = new[]
+        {
+        new { Valor = 1000, Simbolo = "M" },
+        new { Valor = 900, Simbolo = "CM" },
+        new { Valor = 500, Simbolo = "D" },
+        new { Valor = 400, Simbolo = "CD" },
+        new { Valor = 100, Simbolo = "C" },
+        new { Valor = 90, Simbolo = "XC" },
+        new { Valor = 50, Simbolo = "L" },
+        new { Valor = 40, Simbolo = "XL" },
+        new { Valor = 10, Simbolo = "X" },
+        new { Valor = 9, Simbolo = "IX" },
+        new { Valor = 5, Simbolo = "V" },
+        new { Valor = 4, Simbolo = "IV" },
+        new { Valor = 1, Simbolo = "I" }
+    };
+
+        foreach (var i in numerais)
+            if (Numero >= i.Valor)
+            {
+                resultadoFinal += i.Simbolo;
+                Numero -= i.Valor;
+            };
+
         return resultadoFinal;
 
     }
